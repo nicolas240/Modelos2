@@ -23,7 +23,28 @@ mostrarUbicacion:: Ord a=>[a]->Int->a
 mostrarUbicacion l n = l!!n
 
 --pag 47
-mayor :: [Int]->Int
+mayor::[Int]->Int
 mayor (x:xs)
-   | x > mayor(xs) = x
-   | otherwise = mayor(xs)
+ | x > mayor(xs) = x
+ | otherwise = mayor(xs)
+
+--pag 48
+contarPares:: [Int]->Int
+contarPares []=0
+contarPares lista= length [ x | x<- lista, mod x 2 ==0]
+
+--pag 49
+cuadrados::[Int]->[Int]
+cuadrados [ ] = [ ]
+cuadrados l = [x*x | x <-l]
+
+--pag 50
+
+divisible::Int->Int->Bool
+divisible x y = (mod x y ) ==0
+
+divisibles::Int->[Int]
+divisibles x = [y | y <-[1..x], divisible x y]
+
+esPrimo::Int->Bool
+esPrimo n = length (divisibles n) <=2
