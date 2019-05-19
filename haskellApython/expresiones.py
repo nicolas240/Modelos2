@@ -1,3 +1,4 @@
+
 #!bin/python2.7
 
 #pag 42
@@ -18,17 +19,14 @@ def ubicacion(x,n):
 
 #pag 48
 def pares(x):
-	result=0 
-	for a in x:
-		if a%2 ==0: result+=1
-	return result
+	if x==[]: return 0 
+	if x[0]%2 ==0: return 1 + pares(x[1:])
+	return pares(x[1:])
 
 #pag 50
 def primo(x):
-	cont=0
-	for a in range(1,x):
-		if x%a == 0:
-			cont+=1
-		if cont > 2:
-			return False
-	return True
+	if len(divisores(x)) <= 2: return True
+	else: return False
+
+def divisores(x):
+	return  [ [a] for a in range(1,x+1) if x%a == 0  ]
