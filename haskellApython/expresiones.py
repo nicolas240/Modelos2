@@ -28,7 +28,7 @@ def listaOrdenada(lista):
 def ubicacion(x,n):
 	return x[n]
 
-#pag 47 - Mayor elemento lista
+#pag 47 - Mayor elemento de la lista
 def maximo(x):
     return mayor(x[0],x[1:])
 
