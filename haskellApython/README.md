@@ -1,3 +1,3 @@
 Presentado por:
-Nicolas Mendigaño /n
+Nicolas Mendigaño -
 Jeison Jara
