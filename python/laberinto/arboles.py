@@ -1,30 +1,25 @@
 class Nodo:
-    def __init__(self, valor, izq = None, der = None, arb= None, aba=None):
+    def __init__(self, valor, hijos = []):
         self.valor = valor
-        self.izq = izq
-        self.der = der
-	self.arb = arb
-	self.aba = aba
+        self.hijos = hijos
 
 def buscar(arbol, valor):
     if arbol == None:
         return False
     if arbol.valor == valor:
         return True
-    if arbol.valor < valor:
-        return buscar(arbol.der, valor)
-    if arbol.valor > valor:
-        return buscar(arbal.izq, valor)
+    return buscarHijos(arbol.hijos, valor)
 
-def sumar(arbol):
-    if arbol == None:
-        return 0
-    return sumar(arbol.izq) + arbol.valor + sumar(arbol.der)
+def buscarHijos(hijos, valor):
+	if hijos == []: return False
+	return buscar(hijos[0], valor) or buscarHijos(hijos[1:], valor)
 
 def a_lista(arbol):
-    if arbol == None:
+    if arbol == []:
         return []
-    return a_lista(arbol.izq) + [arbol.valor] + a_lista(arbol.der)
+    if len(arbol.hijos)==1:
+        return a_lista( [arbol.valor] +  a_lista(arbol.hijos[0]))
+    return a_lista( [arbol.valor])+ a_lista(arbol.hijos[1:])
 
 def insertar(arbol, valor):
     if arbol == None:
@@ -38,30 +33,8 @@ def crearArbol(arbol, lista):
         return arbol
     if len(lista) > 0:
         return crearArbol(insertar(arbol, lista[0]), lista[1:])
-    
 
-lista = [25, 40, 18, 5, 50, 10]
-print a_lista(crearArbol(Nodo(None),lista))
-
-"""
-arbol = Nodo(25, Nodo(10, Nodo(5), Nodo(18)), Nodo(40, None, Nodo(50)))
-
-#Lista
-print "Arbol: "
-print a_lista(arbol)
-
-#Insertar
-print "Insertando valor: "
-arbol = insertar(arbol, 12)
-print a_lista(arbol)
-
-#Sumar
-print "Suma del arbol: "
-print sumar(Nodo(25, Nodo(10, Nodo(5), Nodo(18)), Nodo(40, None, Nodo(50))))
-
-#Buscar
-print "Busqueda de valor: "
-print buscar(Nodo(25, Nodo(10, Nodo(5), Nodo(18)), Nodo(40, None, Nodo(50))), 50)
-
-"""
+arbol = Nodo(25, [Nodo(10, []),Nodo(40, [])])
+print buscar(arbol, 12)
+a_lista(arbol)
 
