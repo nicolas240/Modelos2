@@ -1,8 +1,9 @@
 # Manejo Arboles Binarios
 
 Presentado Por:
-Nicolas Mendigaño
-Jeison Jara
+
+    -Nicolas Mendigaño
+    -Jeison Jara
 
 Funciones para el manejo basico de arboles binarios.
 
