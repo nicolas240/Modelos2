@@ -49,10 +49,10 @@ def sumar(arbol):
 ## Listar arbol
 Muestra una lista de los valores que contiene el arbol
 ```
-def sumar(arbol):
+def a_lista(arbol):
     if arbol == None:
-        return 0
-    return sumar(arbol.izq) + arbol.valor + sumar(arbol.der)
+        return []
+    return a_lista(arbol.izq) + [arbol.valor] + a_lista(arbol.der)
 ```
 
 ## Insertar valor
@@ -66,7 +66,7 @@ def insertar(arbol, valor):
     return Nodo(arbol.valor, insertar(arbol.izq, valor), arbol.der)
 ```
 
-## Crear arbol a partir de lista lista
+## Crear arbol a partir una lista
 Si se tiene una lista de este tipo:
 ```
 lista = [25, 40, 18, 5, 50, 10]
