@@ -56,7 +56,7 @@ def a_lista(arbol):
 ```
 
 ## Insertar valor
-Inserta el valor en que se indique en el arbol
+Inserta el valor que se indique en el arbol
 ```
 def insertar(arbol, valor):
     if arbol == None:
