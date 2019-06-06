@@ -34,24 +34,17 @@ def hijos_lista(hijos):
 
 #Albol ya tiene raiz
 def insertar(arbol, padre ,valor):
-    #print ('No es Padre: ', arbol.valor)
     if arbol == None:
-        #print ('Vacio')
         return arbol
     if arbol.valor == padre:
-        #print ('Es Padre: ', arbol.valor)
-        arbol.hijos.append(valor)
-        print (arbol.hijos)
-        #return Nodo(arbol.valor, arbol.hijos)
-    #print arbol_lista(Nodo(arbol.valor, arbol.hijos))
+        arbol.hijos.append(Nodo(valor, []))
+        return Nodo(arbol.valor, arbol.hijos)
     return Nodo(arbol.valor, insertarEnHijos(arbol.hijos, padre, valor))
 
 def insertarEnHijos(hijos, padre, valor):
-    #print ('hijos')
-    if len(hijos) < 1:
-        #print ('hijos Vacio')
+    if hijos == []:
         return []
-    return [insertar(hijos[0], padre, valor)] + [insertarEnHijos(hijos[1:],padre, valor)]
+    return [insertar(hijos[0], padre, valor)] + insertarEnHijos(hijos[1:], padre, valor)
 
 def recorrer(f,arbol,fila,columna):
                 """Un if para mirar si hay dos raices o dos puntos de llegada """
