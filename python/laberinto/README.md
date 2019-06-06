@@ -5,7 +5,7 @@ Presentado Por:
    - Nicolas Mendigaño
    - Jeison Jara
 
-Se implementa un programa, que dado un archivo .txt que contiene un averinto compuesto por 1s y 0s (1 representa paredes y 0 camino), X que indica el inicio e Y que indica donde se debe llegar, cargarlo y encontrar si hay una solucion para llegar de X a Y
+Se implementa un programa, que dado un archivo .txt que contiene un averinto compuesto por 1's y 0's, X, Y, donde 1 representa paredes, 0 caminos, X que indica el inicio e Y que indica donde se debe llegar, este sera cargado y se debe encontrar si hay una solucion para llegar de X a Y.
 
 El arbol n-ario debe ser insertado como:
 ```
@@ -73,13 +73,19 @@ def insertar(arbol, padre ,valor):
     if arbol == None:
         return arbol
     if arbol.valor == padre:
-        arbol.hijos.append(valor)
+        arbol.hijos.append(Nodo(valor, []))
         return Nodo(arbol.valor, arbol.hijos)
     return Nodo(arbol.valor, insertarEnHijos(arbol.hijos, padre, valor))
 
 def insertarEnHijos(hijos, padre, valor):
     if hijos == []:
         return []
-    return [insertar(hijos[0], padre, valor)] + [insertarEnHijos(hijos[1:], padre, valor)]
+    return [insertar(hijos[0], padre, valor)] + insertarEnHijos(hijos[1:], padre, valor)
 
+```
+
+Con estas operacions se usara una logica que verificara las posiciones corespondientes a 0 (caminos), enviara estos caminos al arbol n-ario, de tal forma que si en este arbol se encuentra la Y, habra una camino para llegar de X a Y.
+
+```
+Ver recorrido.py
 ```
