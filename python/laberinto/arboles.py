@@ -26,8 +26,6 @@ def hijos_lista(hijos):
     if hijos == []:
         return []
         #return None
-    if len(hijos) == 1:
-        return arbol_lista(hijos[0])
     return arbol_lista(hijos[0]) + hijos_lista(hijos[1:])
 
 #Albol ya tiene raiz
