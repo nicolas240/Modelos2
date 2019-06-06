@@ -2,23 +2,74 @@
 
 import functools
 
-def recorrer(f,arbol, posicion):
-                #arriba(f,len(f.readline()))
+class Nodo:
+    def __init__(self, valor, hijos = []):
+        self.valor = valor
+        self.hijos = hijos
+
+def buscar(arbol, valor):
+    if arbol == None:
+        return False
+    if arbol.valor == valor:
+        return True
+    return buscarHijos(arbol.hijos, valor)
+
+def buscarHijos(hijos, valor):
+    if hijos == []: return False
+    return buscar(hijos[0], valor) or buscarHijos(hijos[1:], valor)
+
+def arbol_lista(arbol):
+    #print (arbol.valor)
+    if arbol == None:
+        #return []
+        return []
+    #print ('arbol', arbol.valor)
+    return [arbol.valor] + hijos_lista(arbol.hijos)
+
+def hijos_lista(hijos):
+    if hijos == []:
+        return []
+        #return None
+    return arbol_lista(hijos[0]) + hijos_lista(hijos[1:])
+
+#Albol ya tiene raiz
+def insertar(arbol, padre ,valor):
+    #print ('No es Padre: ', arbol.valor)
+    if arbol == None:
+        #print ('Vacio')
+        return arbol
+    if arbol.valor == padre:
+        #print ('Es Padre: ', arbol.valor)
+        arbol.hijos.append(valor)
+        print (arbol.hijos)
+        #return Nodo(arbol.valor, arbol.hijos)
+    #print arbol_lista(Nodo(arbol.valor, arbol.hijos))
+    return Nodo(arbol.valor, insertarEnHijos(arbol.hijos, padre, valor))
+
+def insertarEnHijos(hijos, padre, valor):
+    #print ('hijos')
+    if len(hijos) < 1:
+        #print ('hijos Vacio')
+        return []
+    return [insertar(hijos[0], padre, valor)] + [insertarEnHijos(hijos[1:],padre, valor)]
+
+def recorrer(f,arbol,fila,columna):
                 """Un if para mirar si hay dos raices o dos puntos de llegada """
                 if(len(filter(lambda x: x=='x',functools.reduce(lambda x,y: x+y, f) ))!=1 or len(filter(lambda x: x=='y', functools.reduce(lambda x,y: x+y, f) ))!=1):
                         return False
                 """hacer un if de si el valor de vacio es (nose digamos que -2) no se recorra"""
-		print ("Arriba",arriba(f,posicion[0],posicion[1]))
-                print ("Abajo",abajo(f,posicion[0],posicion[1]))
-                print ("Derecha",derecha(f,posicion[0],posicion[1]))
-                print ("Izquierda",izquierda(f,posicion[0],posicion[1]))
+		padre=arbol.valor	
+	
+		arbol=insertar(arbol,padre,arriba(f,fila,columna))
+		recorrer(f,arbol,fila-1,columna)
+                arbol=insertar(arbol,padre,abajo(f,fila,columna))
+		recorrer(f,arbol,fila+1,columna)
+                arbol=insertar(arbol,padre,derecha(f,fila,columna))
+		recorrer(f,arbol,fila,columna+1)
+                arbol=insertar(arbol,padre,izquierda(f,fila,columna))
+		recorrer(f,arbol,fila,columna-1)
+		return bucar(arbol,-2)
 		
-                #print (functools.reduce(lambda x,y: x+y[4],f ) )
-                #print( l for l in f[0] if l=="1")
-                #f.seek(posicion+1)
-                #f.write("b")
-                #print (f.read(1))
-                return True
 
 def arriba(f, fila, columna):
         if fila-1<0: return None
@@ -88,5 +139,7 @@ with open("laberinto.txt","r") as f:
 	print  "Laberinto: "
 	print (f.read())
 	f.seek(0)
-	laberinto = f.readlines()
-	print (recorrer(laberinto,14,encontrarX(laberinto)) )
+	laberinto=f.readlines()
+	posiciones = encontrarX(laberinto)
+	arbol=Nodo(-1,[])
+	print (recorrer(laberinto,arbol,posiciones[0],posiciones[1]) )
