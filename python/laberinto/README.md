@@ -24,6 +24,17 @@ class Nodo:
         self.hijos = hijos
 ```
 
+## Laberinto
+El laberinto que se encuentra en el archivo .txt presenta el siguiente formato.
+
+```
+11010111
+1010X011
+00000101
+11101101
+11Y00110
+```
+
 ## Buscar
 Busca un valor indicado en el arbol.
 ```
