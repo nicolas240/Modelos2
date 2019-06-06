@@ -1,4 +1,4 @@
-# Laberinto Arboles N-Arios
+# Laberinto usando arboles n-arios
 
 Presentado Por:
 
