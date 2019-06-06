@@ -1,4 +1,4 @@
-# Laberinto Arboles N_Arios
+# Laberinto Arboles N-Arios
 
 Presentado Por:
 
