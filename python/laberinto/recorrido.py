@@ -47,22 +47,25 @@ def insertarEnHijos(hijos, padre, valor):
     return [insertar(hijos[0], padre, valor)] + insertarEnHijos(hijos[1:], padre, valor)
 
 def recorrer(f,arbol,fila,columna):
-                """Un if para mirar si hay dos raices o dos puntos de llegada """
-                if(len(filter(lambda x: x=='x',functools.reduce(lambda x,y: x+y, f) ))!=1 or len(filter(lambda x: x=='y', functools.reduce(lambda x,y: x+y, f) ))!=1):
-                        return False
-                """hacer un if de si el valor de vacio es (nose digamos que -2) no se recorra"""
-		padre=arbol.valor	
-	
-		arbol=insertar(arbol,padre,arriba(f,fila,columna))
-		recorrer(f,arbol,fila-1,columna)
-                arbol=insertar(arbol,padre,abajo(f,fila,columna))
-		recorrer(f,arbol,fila+1,columna)
-                arbol=insertar(arbol,padre,derecha(f,fila,columna))
-		recorrer(f,arbol,fila,columna+1)
-                arbol=insertar(arbol,padre,izquierda(f,fila,columna))
-		recorrer(f,arbol,fila,columna-1)
-		return bucar(arbol,-2)
-		
+      	"""Un if para mirar si hay dos raices o dos puntos de llegada """
+        if(len(filter(lambda x: x=='x',functools.reduce(lambda x,y: x+y, f) ))!=1 or len(filter(lambda x: x=='y', functools.reduce(lambda x,y: x+y, f) ))!=1):
+                return False
+	padre=arbol.valor
+	print ('fila:',fila, 'columna: ',columna)
+	if(f[fila][columna]==1 or f[fila][columna]==None):return False
+	arbol=insertar(arbol,padre,arriba(f,fila,columna))
+	if  f[fila-1][columna]!='1': recorrer(f,arbol,fila-1,columna)#f[fila-1][columna]!=None and
+	arbol=insertar(arbol,padre,abajo(f,fila,columna))
+	if  not fila+2>len(f) and f[fila+1][columna]!='1': recorrer(f,arbol,fila+1,columna)
+
+        arbol=insertar(arbol,padre,derecha(f,fila,columna))
+	if not columna+2<len(f[fila]) and f[fila][columna+1]!='1': recorrer(f,arbol,fila,columna+1)
+
+        arbol=insertar(arbol,padre,izquierda(f,fila,columna))
+	if not columna-1<0 and f[fila][columna-1]!='1': recorrer(f,arbol,fila,columna-1)
+
+	#recorrer(f,arbol,fila,columna-1)
+	return buscar(arbol,-2)
 
 def arriba(f, fila, columna):
         if fila-1<0: return None
@@ -78,7 +81,7 @@ def arriba(f, fila, columna):
 #columna+1 por la posicion 0
 
 def abajo(f, fila, columna):
-        if fila+1>len(f): return None
+        if fila+2>len(f): return None
         if f[fila+1][columna]=='y':
                 f[fila+1]=f[fila+1][:columna-1]+\
                         '1'+f[fila+1][columna+1:]
@@ -90,7 +93,7 @@ def abajo(f, fila, columna):
         return None
 
 def derecha(f,fila,columna):
-        if columna+1>len(f[fila]): return None
+        if columna+2>len(f[fila]): return None
         if f[fila][columna+1]=='y':
                 f[fila]= f[fila][:columna]+\
                         '1'+f[fila][columna+2:]
