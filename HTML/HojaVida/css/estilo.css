@@ -1,0 +1,80 @@
+html,body{
+    height:100%;
+    padding: 5px;
+    font-family: Calibri, sans-serif;
+    background: #a3a0aa;
+}
+
+header{
+  display:block;
+  background:#dadada;
+  padding: 15px;
+  width:79%;
+}
+
+section{
+  width:79%;
+  background: #c8c4c4;
+  float: left;
+  overflow: auto;
+  padding: 20px;
+}
+
+section.titulo{
+  background: #625c6e;
+  color: #e3e3e3;
+  line-height: 0.9;
+  width: 79%;
+}
+
+figure.titulo{
+  width:25%;
+  float: left;
+  align: center;
+}
+
+article.titulo{
+  width:60%;
+  float:left;
+}
+
+h1.titulo{
+  align: center;
+  color: #ad9e55;
+}
+h1.subtitulo{
+  align: center;
+  color: #4a988d;
+}
+
+section.descipcion{
+  line-height: 0.9;
+}
+
+.estudios{
+  background: #d7d3d3;
+  padding: 10px;
+}
+
+.trabajo{
+  background: #c6c1d0;
+  padding: 10px;
+}
+
+.referencias{
+  background: #d7d3d3;
+  padding: 10px;
+}
+
+aside{
+  float: left;
+  width: 16%;
+  padding: 10px;
+  font-weight: bold;
+  line-height: 0.8;
+}
+
+.extra{
+  background: #c4c4c4;
+  padding: 5px;
+}
