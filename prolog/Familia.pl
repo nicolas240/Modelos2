@@ -1,10 +1,38 @@
-padrede('','nicolas').
-padrede('japi','alberto').
-padrede('ales','alberto').
-padrede('niao','japi').
-padrede('ales','camilo').
-padrede('camilo','francisco').
-padrede('jose','marlon').
+padrede('','Maria').
+padrede('Maria','Alba').
+padrede('Maria','Rosa').
+padrede('Maria ','Ester').
+padrede('Maria','Magda').
+padrede('Maria','Luis').
+padrede('Alba','Laura').
+padrede('Rosa','Marcela').
+padrede('Rosa','Hernan').
+padrede('Rosa','Eliana').
+padrede('Rosa','Hernan').
+padrede('Abraham','Marcela').
+padrede('Abraham','Hernan').
+padrede('Abraham','Eliana').
+padrede('Abraham','Hernan').
+padrede('Marcela','Juan').
+padrede('Belisario','Juan').
+padrede('Ester','Diego').
+padrede('Ester','Adriana').
+padrede('LuisA','Diego').
+padrede('LuisA','Adriana').
+padrede('Diaego','Ian').
+padrede('Rocio','Ian').
+padrede('Magda','Jeison').
+padrede('Magda','Gabriela').
+padrede('Gabriel','Jeison').
+padrede('Gabriel','Gabriela').
+padrede('Luis','Mayito').
+padrede('Luis','Jenny').
+padrede('Luis','Karen').
+padrede('MariLuz','Mayito').
+padrede('MariLuz','Jenny').
+padrede('MariLuz','Karen').
+padrede('Jenny','Sebastian').
+padrede('Jorge','Sebastian').
 
 
 hijode(A,B) :- padrede(B,A).
