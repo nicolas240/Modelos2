@@ -60,7 +60,7 @@ function run(){
 			calacas[i].actualizar();
 			if(quica.colision(calacas[i].x,calacas[i].y)){
 				quica.sprite = 5;
-				quica.vida--;
+				quica.vida=quica.vida-50;
 				$('#pierde')[0].play();
 			}
 		}
