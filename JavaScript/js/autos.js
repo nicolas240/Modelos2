@@ -17,7 +17,7 @@ function Calaca(x,y){
 	this.y = aleatorio(100,330);
 	this.velocidad = 0;
 	while(this.velocidad == 0)
-		this.velocidad=aleatorio(-3,3);
+		this.velocidad=aleatorio(-6,6);
 
 	this.dibujar = function(ctx){
 		var img = this.img;
