@@ -12,25 +12,36 @@
   </head>
 
   <body >
+    <header>
+      <h1>Buscaminas</h1>
+    </header>
 
-    <h1>Buscaminas</h1>
-    <img id="cara" src="images/smile.png">
-    <p>
-    <center><canvas id="canvas" width="900" height="480"></canvas></center>
+    <section class="seccionsup">
+      <ul class="superior">
+        <li class="tiempo"><span id="countdown"></span></li>
+        <li><img id="cara" src="images/smile.png"></li>
+        <li class="puntos">Puntos: <span id="puntaje"></span></li>
+      </ul>
+    </section>
 
+    <section>
+      <center><canvas id="canvas" width="900" height="480"></canvas></center>
 
-      
-    <script src="scripts/logica.js">
-      document.getElementById("cara").src = "images/smileB.png";
-    </script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/controlador.js"></script>
+      <script src="scripts/logica.js">
+        document.getElementById("cara").src = "images/smileB.png";
+      </script>
 
+      <script src="scripts/main.js"></script>
 
- 
-  <script type="text/javascript">  
-  
-  </script> 
+      <script src="scripts/controlador.js"></script>
+
+      <script src="scripts/tiempo.js"></script>
+
+      <script type="text/javascript">
+
+      </script>
+
+    </section>
 
 
 
