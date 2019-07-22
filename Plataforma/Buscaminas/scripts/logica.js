@@ -48,7 +48,6 @@ function crearTablero(){
             }
         }
     }
-
     tableroConsola();
 }
 
@@ -88,7 +87,7 @@ function botonPresionado(boton, x, y) {
                 }else{
                     //Si pulsa un terreno lo visualiza ejecutando una funcion recursiva
                     clicCasilla(f,c);
-                }
+                  }
             }
         }else if (boton == 2){
             if (visible[f][c] == 0){
@@ -100,6 +99,7 @@ function botonPresionado(boton, x, y) {
     }else{
         crearTablero();
         document.getElementById("cara").src = "images/smile.png";
+        resetTime();
     }
 
 }
@@ -111,6 +111,7 @@ function clicCasilla(f, c){
         //Descubre la casilla
         visible[f][c] = 1;
         casillasVistas++;
+        puntaje();
         if (casillasVistas == 381){
             //Si llega a las 381 casillas descubiertas gana
             victoria();
@@ -149,4 +150,13 @@ function gameOver(){
 function victoria(){
     estado = 2;
     document.getElementById("cara").src = "images/smileH.png";
+}
+
+function puntaje(){
+    document.getElementById('puntaje').innerHTML = totalTime;
+}
+
+function resetTime(){
+  totalTime=0;
+  updateClock();
 }

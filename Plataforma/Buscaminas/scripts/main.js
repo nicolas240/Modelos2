@@ -86,7 +86,12 @@ function pintar(){
   			//lapiz.setFont(fuenteBom);
   			//lapiz.fillText("" + "*", x + 13, y + 20);
   		}
-
+/*
+      if (visible[f][c] == 0 && tablero[f][c] == 9) {
+        lapiz.fillStyle(Color.pink);
+        //lapiz.fillRect(x, y, 40, 40);
+      }
+*/
   		// ------------------------------------
   		// Verificacion bombas puestas
   		/*if (miSistema.getVisible()[f][c] == 0 && miSistema.getTablero()[f][c] == 9) {
