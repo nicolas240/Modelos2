@@ -153,10 +153,12 @@ function victoria(){
 }
 
 function puntaje(){
-    document.getElementById('puntaje').innerHTML = totalTime;
+    document.getElementById('puntaje').innerHTML = casillasVistas;
 }
 
 function resetTime(){
   totalTime=0;
   updateClock();
+  casillasVistas=0;
+  document.getElementById('puntaje').innerHTML = casillasVistas;
 }

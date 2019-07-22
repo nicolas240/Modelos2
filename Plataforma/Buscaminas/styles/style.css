@@ -3,17 +3,18 @@ html {
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
   background-color:  #d6dbdf;
+  background-image: image("../images/fondo.jpg");
 }
 
 header{
-  background-color: #77827a;
+  background-color: #a4aca6;
 }
 
 h1 {
   font-size: 60px;
   text-align: center;
   margin: 10px;
-  padding: 20px 0;
+  padding: 10px 0;
   color: #117a65;
   text-shadow: 3px 3px 1px black;
 }
@@ -47,15 +48,20 @@ canvas{
   font-family: 'Impact', impact;
 }
 
-.smile {
+#cara {
+  /*
   background-color:#999;
   float:left;
-  border: 5px solid black;
+  border: 5px solid black;*/
+  width: 70px;
+  height: 70px;
 }
 
 .tiempo{
+  /*background-color:#999;*/
+  border: 5px solid black
   display: inline;
-  width: 33%;
+  /*width: 33%;*/
   color: #ff0000;
   font-size: 80px;
   font-family: 'Impact', impact;*/
@@ -63,10 +69,10 @@ canvas{
 
 .puntos{
   display: inline;
-  width: 33%;
+  /*width: 33%;*/
   color: #000c98;
   font-size: 80px;
-  font-family: 'Impact', impact;*/
+  font-family: 'Impact', impact;
 }
 
 ul.superior li {
@@ -75,5 +81,6 @@ ul.superior li {
 }
 
 .seccionsup{
-  aling: center; 
+  text-align: center
+  /*aling: center; */
 }
