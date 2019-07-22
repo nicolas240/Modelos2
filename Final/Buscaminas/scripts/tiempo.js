@@ -4,7 +4,7 @@ var totalTime = 0;
 function updateClock() {
   document.getElementById('countdown').innerHTML = '<mark>'+totalTime+'</mark>';
   if(estado==1){
-    alert('Final');
+    alert('Fin del juego');
   }else if (estado==2) {
     alert('Puntaje: '+ totalTime);
   }else{
