@@ -162,5 +162,5 @@ function resetTime(){
   totalTime=0;
   updateClock();
   casillasVistas=0;
-  document.getElementById('puntaje').innerHTML = casillasVistas;
+  document.getElementById('puntaje').innerHTML ='<mark>'+casillasVistas+'</mark>';
 }

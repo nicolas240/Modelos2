@@ -3,6 +3,7 @@ html {
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
   background-color:	#000000;
+  zoom: 75%;
   background: "../images/fondo.jpg":
 }
 
@@ -55,20 +56,19 @@ body {
 }
 
 canvas{
-  margin: 0 auto;
+  #margin: 0 auto;
   font-size: 50%;
   font-family: 'Impact', impact;
+  margin-top: 3%;
 }
 
-cara {
-  /*
-  background-color:#999;
+#cara {
+  
+  /*background-color:#999;
   float:left;
   border: 5px solid black;*/
-   margin-right: 150px;
   width: 70px;
   height: 70px;
-#margin: 0px 0px;
 }
 
 .tiempo{
